@@ -1,5 +1,6 @@
+IP-CIDR,142.250.0.0/15,no-resolve
+DOMAIN-SUFFIX,gstatic.com
 DOMAIN-SUFFIX,linux.do
 DOMAIN-SUFFIX,baidu.com
-DOMAIN-SUFFIX,gstatic.com
 DOMAIN-SUFFIX,nasl.cc
 DOMAIN-SUFFIX,nasn.cc
