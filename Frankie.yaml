@@ -7,7 +7,7 @@ proxy-providers:
     url: "https://hongxing.one/hxyunvip?token=19a8fa3db42efe7828d67780555749f7"
     type: http
     interval: 86400
-    filter: '(?!.*(剩余流量|重置套餐|官网|节点异常|刷新失败|❗)).*'
+    filter: '(?!.*(剩余流量|重置套餐|官网|节点异常|刷新失败|建议|如果|客户端|网站)).*'
     health-check:
       enable: true
       url: https://www.gstatic.com/generate_204
@@ -17,7 +17,7 @@ proxy-providers:
     url: "https://zhuzhuzhu.whtjdasha.com/api/v1/client/subscribe?token=791ed5e6d2e563d30abcf3a98a136ffb"
     type: http
     interval: 86400
-    filter: '(?!.*(剩余流量|重置套餐|官网|节点异常|刷新失败|❗)).*'
+    filter: '(?!.*(剩余流量|重置套餐|官网|节点异常|刷新失败|建议|如果|客户端|网站)).*'
     health-check:
       enable: true
       url: https://www.gstatic.com/generate_204
