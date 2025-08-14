@@ -103,7 +103,7 @@ tun:
 dns:
   enable: true
   listen: 0.0.0.0:1053
-  ipv6: false
+  ipv6: true
   respect-rules: true
   enhanced-mode: fake-ip
   fake-ip-range: 28.0.0.1/8
@@ -158,69 +158,59 @@ proxy-groups:
   # 2. 节点过滤与自动测速组 (被上面的策略组调用)
   - name: 所有-自动
     type: url-test
-    url: https://www.gstatic.com/generate_204
     interval: 180
-    use: [红杏机场, 牛逼加速器]
+    include-all: true
     filter: '.*'
   - name: 港台日新韩-自动
     type: url-test
-    url: https://www.gstatic.com/generate_204
     interval: 180
-    use: [红杏机场, 牛逼加速器]
+    include-all: true
     filter: '(广港|广台|广日|广新|广韩|广美|香港|HK|Hong Kong|🇭🇰|HongKong|台湾|TW|Tai Wan|🇹🇼|🇨🇳|TaiWan|Taiwan|日本|JP|川日|东京|大阪|泉日|埼玉|沪日|深日|🇯🇵|Japan|新加坡|SG|坡|狮城|🇸🇬|Singapore|韩国|KR|首尔|春川|🇰🇷|Korea)'
   - name: 台日新韩-自动
     type: url-test
-    url: https://www.gstatic.com/generate_204
     interval: 180
-    use: [红杏机场, 牛逼加速器]
+    include-all: true
     filter: '(广台|广日|广新|广韩|广美|台湾|TW|Tai Wan|🇹🇼|🇨🇳|TaiWan|Taiwan|日本|JP|川日|东京|大阪|泉日|埼玉|沪日|深日|🇯🇵|Japan|新加坡|SG|坡|狮城|🇸🇬|Singapore|韩国|KR|首尔|春川|🇰🇷|Korea)'
   - name: 香港-自动
     type: url-test
-    url: https://www.gstatic.com/generate_204
     interval: 180
-    use: [红杏机场, 牛逼加速器]
+    include-all: true
     filter: '(广港|香港|HK|Hong Kong|🇭🇰|HongKong)'
   - name: 台湾-自动
     type: url-test
-    url: https://www.gstatic.com/generate_204
     interval: 180
-    use: [红杏机场, 牛逼加速器]
+    include-all: true
     filter: '(广台|台湾|台灣|TW|Tai Wan|🇹🇼|🇨🇳|TaiWan|Taiwan)'
   - name: 日本-自动
     type: url-test
-    url: https://www.gstatic.com/generate_204
     interval: 180
-    use: [红杏机场, 牛逼加速器]
+    include-all: true
     filter: '(广日|日本|JP|川日|东京|大阪|泉日|埼玉|沪日|深日|🇯🇵|Japan)'
   - name: 新加坡-自动
     type: url-test
-    url: https://www.gstatic.com/generate_204
     interval: 180
-    use: [红杏机场, 牛逼加速器]
+    include-all: true
     filter: '(广新|新加坡|SG|坡|狮城|🇸🇬|Singapore)'
   - name: 韩国-自动
     type: url-test
-    url: https://www.gstatic.com/generate_204
     interval: 180
-    use: [红杏机场, 牛逼加速器]
+    include-all: true
     filter: '(广韩|韩国|韓國|KR|首尔|春川|🇰🇷|Korea)'
   - name: 美国-自动
     type: url-test
-    url: https://www.gstatic.com/generate_204
     interval: 180
-    use: [红杏机场, 牛逼加速器]
+    include-all: true
     filter: '(广美|美|US|纽约|波特兰|达拉斯|俄勒|凤凰城|费利蒙|硅谷|拉斯|洛杉|圣何塞|圣克拉|西雅|芝加|🇺🇸|3180|United States)'
   - name: 欧洲-自动
     type: url-test
-    url: https://www.gstatic.com/generate_204
     interval: 180
-    use: [红杏机场, 牛逼加速器]
+    include-all: true
     filter: '(英|CA|加|UK|德|DE|法|FR|荷|NL|俄|RU|意|IT|土|TR|西|ES|瑞典|SE|瑞士|CH|葡|PT|波|PL|捷|CZ|斯|SK|匈|HU|丹|DK|芬|FI|挪|NO|爱尔兰|IE|比利时|BE|希腊|GR|卢森堡|LU|冰岛|IS)'
   - name: 其他-自动
     type: url-test
-    url: https://www.gstatic.com/generate_204git
+
     interval: 180
-    use: [红杏机场, 牛逼加速器]
+    include-all: true
     filter: '(柬|KH|尼|NG|也|YE|秘|PE|利|LY|埃|EG|孟|BD|澳|AU|墨|MX|印|IN|越|VN|智|CL|巴|BR|沙|SA|泰|TH|以|IgithubL|南非|ZA|阿根廷|AR)'
 
 # 规则集 (Rule Providers)
@@ -345,7 +335,7 @@ rule-providers:
     type: http
     behavior: ipcidr
     format: mrs
-    url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/cn.mrs"
+    url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geoip/google.mrs"
     interval: 86400
   telegram_ip:
     type: http
@@ -369,8 +359,8 @@ rule-providers:
 # 规则 (Rules)
 rules:
   - RULE-SET,直连规则,✨ 直连
-  - RULE-SET,private_ip,✨ 直连,no-resolve
-  - RULE-SET,private_domain,✨ 直连
+  - RULE-SET,private_ip,➡️ 国内,no-resolve
+  - RULE-SET,private_domain,➡️ 国内
   - RULE-SET,AI规则,👽 AI,no-resolve
   - RULE-SET,AI规则IP,👽 AI
   - RULE-SET,GitHub规则,📘 GitHub
@@ -389,6 +379,6 @@ rules:
   - RULE-SET,国外规则3_Global,🌍 国外
   - RULE-SET,google_ip,🌍 国外,no-resolve
   - RULE-SET,代理规则,🌵 代理
-  - RULE-SET,cn_domain,✨ 直连
-  - RULE-SET,cn_ip,✨ 直连
+  - RULE-SET,cn_domain,➡️ 国内
+  - RULE-SET,cn_ip,➡️ 国内
   - MATCH,➡️ 国内
