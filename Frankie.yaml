@@ -161,7 +161,7 @@ proxy-groups:
     url: https://www.gstatic.com/generate_204
     interval: 180
     use: [红杏机场, 牛逼加速器]
-    filter: '*'
+    filter: '.*'
   - name: 港台日新韩-自动
     type: url-test
     url: https://www.gstatic.com/generate_204
