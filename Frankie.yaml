@@ -4,7 +4,7 @@
 # 机场订阅
 proxy-providers:
   红杏机场:
-    url: "https://hongxing.one/hxyunvip?token=19a8fa3db42efe7828d67780555749f7"
+    url: "https://hongxing.one/hxyunvip?token=93f390924cd0a508216a0bb0c14044cf"
     type: http
     interval: 86400
     filter: '(?!.*(剩余流量|重置套餐|官网|节点异常|刷新失败|建议|如果|客户端|网站)).*'
@@ -305,6 +305,13 @@ rule-providers:
     format: mrs
     url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/globalsign.mrs"
     interval: 86400
+  Steam:
+    type: http
+    behavior: domain
+    format: mrs
+    url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/steam.mrs"
+    interval: 86400    
+    
   代理规则:
     type: http
     behavior: classical
