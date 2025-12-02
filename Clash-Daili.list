@@ -13,3 +13,4 @@ DOMAIN-SUFFIX,railpack.com,PROXY
 DOMAIN-SUFFIX,githubusercontent.com,PROXY
 DOMAIN-KEYWORD,docker,PROXY
 DOMAIN-SUFFIX,clerk.com,PROXY
+DOMAIN-SUFFIX,lobehub.com
