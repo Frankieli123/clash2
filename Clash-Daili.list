@@ -5,3 +5,10 @@ DOMAIN-SUFFIX,steampowered.com
 DOMAIN-SUFFIX,steamcontent.com
 DOMAIN-KEYWORD,steamcloud,ProxyGroup
 DOMAIN-SUFFIX,1key.me
+DOMAIN-SUFFIX,docker.com,PROXY
+DOMAIN-SUFFIX,docker.io,PROXY
+DOMAIN-SUFFIX,rclone.org,PROXY
+DOMAIN-SUFFIX,nixpacks.com,PROXY
+DOMAIN-SUFFIX,railpack.com,PROXY
+DOMAIN-SUFFIX,githubusercontent.com,PROXY
+DOMAIN-KEYWORD,docker,PROXY
