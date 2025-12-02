@@ -12,3 +12,4 @@ DOMAIN-SUFFIX,nixpacks.com,PROXY
 DOMAIN-SUFFIX,railpack.com,PROXY
 DOMAIN-SUFFIX,githubusercontent.com,PROXY
 DOMAIN-KEYWORD,docker,PROXY
+DOMAIN-SUFFIX,clerk.com,PROXY
